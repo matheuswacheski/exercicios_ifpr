@@ -2,9 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-int main()
-{
-
+int main(){
     double a, b, c;
     double delta, raizDelta;
     double raizX1, raizX2;
@@ -17,17 +15,12 @@ int main()
     raizDelta = sqrt(delta);
     printf("delta = %lf\n", delta);
 
-    if (delta < 0)
-    {
-        printf("Não possui raizes reais\n");
-    }
-    else if (delta == 0)
-    {
+    if (delta < 0){
+        printf("Nao possui raizes reais\n");
+    }else if (delta == 0){
         raizX1 = (-b + raizDelta) / (2 * a);
         printf("So tem uma raiz: %lf\n", raizX1);
-    }
-    else
-    {
+    }else{
         raizX1 = (-b + raizDelta) / (2 * a);
         raizX2 = (-b - raizDelta) / (2 * a);
         printf("Duas raizes: %lf e %lf\n", raizX1, raizX2);
