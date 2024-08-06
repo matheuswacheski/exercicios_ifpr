@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <locale.h>
 
-int fatorial()
+void fatorial()
 {
     int n;
     printf("Digite um número inteiro: ");
@@ -16,7 +16,7 @@ int fatorial()
     printf("Fatorial é: %d\n", fat);
 }
 
-int primo()
+void primo()
 {
     int n;
     printf("Digite um número inteiro: ");
@@ -46,24 +46,26 @@ int main()
 {
     setlocale(LC_ALL, "Portuguese"); // Permite imprimir acentos e cedilha.//
     int opcao;
-    printf("Opção: \n1-fatorial\n2-primo\n3-sair\n");
-    scanf("%d", &opcao);
-    fflush(stdin); // Limpa a memória do teclado.
-    printf("\n\n");
-    switch (opcao)
+    do
     {
-    case 1:
-        fatorial();
-        break;
-    case 2:
-        primo();
-        break;
-    case 0:
-        break;
-    default:
-        printf("Opção inválida!\n");
-        break;
-    }
-    printf("\n\n");
-    while (opcao != 0);
+        printf("Opção: \n1-fatorial\n2-primo\n3-sair\n");
+        scanf("%d", &opcao);
+        fflush(stdin); // Limpa a memória do teclado.
+        printf("\n\n");
+        switch (opcao)
+        {
+        case 1:
+            fatorial();
+            break;
+        case 2:
+            primo();
+            break;
+        case 0:
+            break;
+        default:
+            printf("Opção inválida!\n");
+            break;
+        }
+        printf("\n\n");
+    } while (opcao != 0);
 }
