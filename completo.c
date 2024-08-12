@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#include <math.h> // Necessário para usar a função sqrt()
 
 void fatorial()
 {
@@ -22,23 +23,32 @@ void primo()
     printf("Digite um número inteiro: ");
     scanf("%d", &n);
     fflush(stdin); // Limpa a memória do teclado.
+    if (n <= 1)
+    {
+        printf("Número NÂO é primo\n");
+        return;
+    }
+    
     int i;
-    int ehPrimo = 1; // por enquanto é primo.
-    for (i = 2; i < n / 2; i++)
+    int ehPrimo = 1; // Por enquanto é primo.
+    
+    // Verificar divisibilidade até a raiz quadrada de n
+    for (i = 2; i <= sqrt(n); i++)
     {
         if (n % i == 0)
         {
-            ehPrimo = 0; // não é primo.
-            break;       // finaliza a procura.
+            ehPrimo = 0; // Não é primo.
+            break;       // Finaliza a procura.
         }
     }
+    
     if (ehPrimo)
     {
-        printf("Número NÂO é primo\n");
+        printf("Número é primo\n");
     }
     else
     {
-        printf("Número é primo\n");
+        printf("Número NÂO é primo\n");
     }
 }
 
@@ -60,12 +70,13 @@ int main()
         case 2:
             primo();
             break;
-        case 0:
+        case 3: // Corrigir para sair
             break;
         default:
             printf("Opção inválida!\n");
             break;
         }
         printf("\n\n");
-    } while (opcao != 0);
+    } while (opcao != 3); // Alterado para sair quando a opção for 3
 }
+
