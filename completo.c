@@ -34,11 +34,11 @@ void primo()
     }
     if (ehPrimo)
     {
-        printf("Número é primo\n");
+        printf("Número NÂO é primo\n");
     }
     else
     {
-        printf("Número NÃO é primo\n");
+        printf("Número é primo\n");
     }
 }
 
