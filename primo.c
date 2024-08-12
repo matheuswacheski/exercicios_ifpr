@@ -3,27 +3,35 @@
 
 int main()
 {
-    setlocale(LC_ALL, "Portuguese"); // Permite imprimir acentos e cedilha.//
     int n;
     printf("Digite um número inteiro: ");
     scanf("%d", &n);
     fflush(stdin); // Limpa a memória do teclado.
+    if (n <= 1)
+    {
+        printf("Número NÂO é primo\n");
+        return;
+    }
+    
     int i;
-    int ehPrimo = 1; // por enquanto é primo.
-    for (i = 2; i < n / 2; i++)
+    int ehPrimo = 1; // Por enquanto é primo.
+    
+    // Verificar divisibilidade até a raiz quadrada de n
+    for (i = 2; i <= sqrt(n); i++)
     {
         if (n % i == 0)
         {
-            ehPrimo = 0; // não é primo.
-            break;       // finaliza a procura.
+            ehPrimo = 0; // Não é primo.
+            break;       // Finaliza a procura.
         }
     }
+    
     if (ehPrimo)
     {
         printf("Número é primo\n");
     }
     else
     {
-        printf("Número NÃO é primo\n");
+        printf("Número NÂO é primo\n");
     }
 }
