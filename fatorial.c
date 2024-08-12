@@ -9,7 +9,6 @@ int main()
     scanf("%d", &n);
     fflush(stdin); // Limpa a memória do teclado.
     int i, fat = 1;
-    
     for (i = 2; i <= n; i++)
     {
         fat = fat * i;
